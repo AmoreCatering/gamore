@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import pizzaImg from '@/public/pizza.webp';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gamore.se'),
+  metadataBase: new URL('https://www.gamore.se'),
   title:
     'Napolitansk Pizza Stockholm | Traditionell Italiensk Pizza | Gelateria Amore',
   description:
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       'Napolitansk Pizza i Stockholm - Äkta italiensk pizza enligt tradition',
     description:
       'Lär dig allt om äkta napolitansk pizza. Vi bakar vår pizza enligt traditionella italienska metoder med de bästa råvarorna.',
-    url: 'https://gamore.se/pizza',
+    url: 'https://www.gamore.se/pizza',
     siteName: 'Gelateria Amore',
     images: [
       {
@@ -38,61 +38,64 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://gamore.se/pizza',
-  },
-  other: {
-    'application/ld+json': JSON.stringify([
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline:
-          'Napolitansk Pizza Stockholm | Traditionell Italiensk Pizza | Gelateria Amore',
-        description:
-          'Äkta napolitansk pizza i Stockholm bakad enligt traditionella metoder. Lär dig om pizzans historia och hur vi tillverkar den på Gelateria Amore.',
-        image: 'https://gamore.se/pizza.jpg',
-        author: {
-          '@type': 'Organization',
-          name: 'Gelateria Amore',
-          url: 'https://gamore.se',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Gelateria Amore',
-          url: 'https://gamore.se',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://gamore.se/logo.png',
-          },
-        },
-        datePublished: '2024-01-01',
-        dateModified: new Date().toISOString().split('T')[0],
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Startsida',
-            item: 'https://gamore.se',
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Napolitansk Pizza',
-            item: 'https://gamore.se/pizza',
-          },
-        ],
-      },
-    ]),
+    canonical: 'https://www.gamore.se/pizza',
   },
 };
 
 export default function PizzaPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline:
+        'Napolitansk Pizza Stockholm | Traditionell Italiensk Pizza | Gelateria Amore',
+      description:
+        'Äkta napolitansk pizza i Stockholm bakad enligt traditionella metoder. Lär dig om pizzans historia och hur vi tillverkar den på Gelateria Amore.',
+      image: 'https://www.gamore.se/pizza.jpg',
+      author: {
+        '@type': 'Organization',
+        name: 'Gelateria Amore',
+        url: 'https://www.gamore.se',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Gelateria Amore',
+        url: 'https://www.gamore.se',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.gamore.se/logo.png',
+        },
+      },
+      datePublished: '2024-01-01',
+      dateModified: new Date().toISOString().split('T')[0],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Startsida',
+          item: 'https://www.gamore.se',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Napolitansk Pizza',
+          item: 'https://www.gamore.se/pizza',
+        },
+      ],
+    },
+  ];
+
   return (
     <>
-      {/* Hero Section */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div
         className="w-full relative overflow-hidden"
         style={{ minHeight: '550px' }}
@@ -149,7 +152,6 @@ export default function PizzaPage() {
         </svg>
       </div>
 
-      {/* Main Content Section */}
       <section className="py-12 flex flex-col gap-8 bg-cream">
         <h2 className="text-3xl md:text-5xl text-amber-900 font-light md:w-[70%] mx-auto">
           Pizzans Historia
@@ -177,10 +179,8 @@ export default function PizzaPage() {
           </p>
         </div>
 
-        {/* Divider */}
         <div className="w-[90%] md:w-[70%] mx-auto h-px bg-linear-to-r from-transparent via-black/40 to-transparent" />
 
-        {/* Pizza i Sverige */}
         <article className="md:w-[70%] w-full mx-auto px-4 md:px-0">
           <h3 className="text-3xl md:text-5xl text-amber-900 mb-8 font-light">
             Pizza i Sverige
@@ -206,7 +206,6 @@ export default function PizzaPage() {
             </p>
           </div>
 
-          {/* Image Gallery */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             <Image
               src="/pizza-marghareta.jpeg"
@@ -227,10 +226,8 @@ export default function PizzaPage() {
           </div>
         </article>
 
-        {/* Divider */}
         <div className="w-[90%] md:w-[70%] mx-auto h-px bg-linear-to-r from-transparent via-black/40 to-transparent" />
 
-        {/* Vår Pizza */}
         <article className="md:w-[70%] w-full mx-auto px-4 md:px-0">
           <h3 className="text-3xl md:text-5xl text-amber-900 mb-8 font-light">
             Vår Napolitansk Pizza

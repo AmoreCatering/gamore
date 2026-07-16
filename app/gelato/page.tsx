@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import gelatoImg from '@/public/gelato-display-hero-img.webp';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gamore.se'),
+  metadataBase: new URL('https://www.gamore.se'),
   title:
     'Italiensk Gelato Stockholm | Färsk Glass Gjord Dagligen | Gelateria Amore',
   description:
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'Italiensk Gelato i Stockholm - Äkta italiensk glass gjord dagligen',
     description:
       'Lär dig allt om äkta italiensk gelato. Vi tillverkar vår gelato med de bästa råvarorna och italiensk tradition.',
-    url: 'https://gamore.se/gelato',
+    url: 'https://www.gamore.se/gelato',
     siteName: 'Gelateria Amore',
     images: [
       {
@@ -38,60 +38,64 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://gamore.se/gelato',
-  },
-  other: {
-    'application/ld+json': JSON.stringify([
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline:
-          'Italiensk Gelato Stockholm | Färsk Glass Gjord Dagligen | Gelateria Amore',
-        description:
-          'Äkta italiensk gelato i Stockholm gjord dagligen. Lär dig vad gelato är och hur vi tillverkar den på Gelateria Amore.',
-        image: 'https://gamore.se/gelato.jpg',
-        author: {
-          '@type': 'Organization',
-          name: 'Gelateria Amore',
-          url: 'https://gamore.se',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Gelateria Amore',
-          url: 'https://gamore.se',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://gamore.se/logo.png',
-          },
-        },
-        datePublished: '2024-01-01',
-        dateModified: new Date().toISOString().split('T')[0],
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Startsida',
-            item: 'https://gamore.se',
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Italiensk Gelato',
-            item: 'https://gamore.se/gelato',
-          },
-        ],
-      },
-    ]),
+    canonical: 'https://www.gamore.se/gelato',
   },
 };
 
 export default function GelatoPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline:
+        'Italiensk Gelato Stockholm | Färsk Glass Gjord Dagligen | Gelateria Amore',
+      description:
+        'Äkta italiensk gelato i Stockholm gjord dagligen. Lär dig vad gelato är och hur vi tillverkar den på Gelateria Amore.',
+      image: 'https://www.gamore.se/gelato.jpg',
+      author: {
+        '@type': 'Organization',
+        name: 'Gelateria Amore',
+        url: 'https://www.gamore.se',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Gelateria Amore',
+        url: 'https://www.gamore.se',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.gamore.se/logo.png',
+        },
+      },
+      datePublished: '2024-01-01',
+      dateModified: new Date().toISOString().split('T')[0],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Startsida',
+          item: 'https://www.gamore.se',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Italiensk Gelato',
+          item: 'https://www.gamore.se/gelato',
+        },
+      ],
+    },
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero Section */}
       <div
         className="w-full relative overflow-hidden"
@@ -173,7 +177,7 @@ export default function GelatoPage() {
         {/* Divider */}
         <div className="w-[90%] md:w-[70%] mx-auto h-px bg-linear-to-r from-transparent via-black/40 to-transparent" />
 
-        {/* Hur Tillverkas Ern Gelato */}
+        {/* Hur Tillverkas Vår Gelato? */}
         <article className="md:w-[70%] w-full mx-auto px-4 md:px-0">
           <h3 className="text-3xl md:text-5xl text-amber-900 mb-8 font-light">
             Hur Tillverkas Vår Gelato?
@@ -187,11 +191,11 @@ export default function GelatoPage() {
               måste komma från ett annat håll.
             </p>
             <p>
-              Äkta gelato, precis sådan som vi tillverkar, består av flera olika
-              sorters socker som är av mycket bra kvalitet för bästa möjliga
-              smak. Det är just sockret som är den bidragande faktorn till dess
-              krämighet. Gelato är en väldigt kompakt glassform som innehåller
-              betydligt mindre insprutad luft än traditionell glass.
+              Äkta gelato, precis sådan som vi tillverkar, består av several
+              olika sorters socker som är av mycket bra kvalitet för bästa
+              möjliga smak. Det är just sockret som är den bidragande faktorn
+              till dess krämighet. Gelato är en väldigt kompakt glassform som
+              innehåller betydligt mindre insprutad luft än traditionell glass.
             </p>
             <p>
               Vanlig glass har ungefär 50 % insprutad luft, medan den gelato som
@@ -226,7 +230,7 @@ export default function GelatoPage() {
         {/* Divider */}
         <div className="w-[90%] md:w-[70%] mx-auto h-px bg-linear-to-r from-transparent via-black/40 to-transparent" />
 
-        {/* Beste Råvaror */}
+        {/* Vi Använder Bara de Bästa Råvarorna */}
         <article className="md:w-[70%] w-full mx-auto px-4 md:px-0">
           <h3 className="text-3xl md:text-5xl text-amber-900 mb-8 font-light">
             Vi Använder Bara de Bästa Råvarorna
@@ -246,7 +250,7 @@ export default function GelatoPage() {
               Stockholm!
             </p>
             <p>
-              Om ni istället för mjölkbasrad gelato föredrar vegansk gelato
+              Om ni istället för mjölkbaserad gelato föredrar vegansk gelato
               hittar ni även det hos oss, vilket ni kan läsa mer om{' '}
               <Link
                 href="/vegansk-gelato"
