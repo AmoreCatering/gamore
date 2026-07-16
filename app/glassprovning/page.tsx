@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import gelatoImage from '@/public/gelato-banner.webp';
-
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gamore.se'),
+  metadataBase: new URL('https://www.gamore.se'),
   title: 'Glassprovning Stockholm - Boka Gelato-upplevelse | Gelateria Amore',
   description:
     'Boka unik glassprovning i Stockholm. Prova 12 smaker äkta italiensk gelato. Perfekt för företagsevent och privatfester. Bokning öppnar mars 2026!',
@@ -21,80 +20,82 @@ export const metadata: Metadata = {
     'gruppaktivitet Stockholm',
     'kickoff aktivitet',
   ],
-
   openGraph: {
     title: 'Glassprovning Stockholm - Upplev Äkta Italiensk Gelato',
     description:
       'Prova 12 smaker färsk gelato i en guidad provning. Perfekt för företag och glassälskare.',
-    url: 'https://gamore.se/glassprovning',
+    url: 'https://www.gamore.se/glassprovning',
     images: ['/gelato-banner.webp'],
     locale: 'sv_SE',
   },
-
   alternates: {
-    canonical: 'https://gamore.se/glassprovning',
-  },
-  other: {
-    'application/ld+json': JSON.stringify([
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Event',
-        name: 'Glassprovning Stockholm',
-        description:
-          'Upplev äkta italiensk gelato med en guidad provning på 12 olika smaker. Perfekt för företag, privatfester och glassälskare.',
-        image: 'https://gamore.se/gelato-banner.webp',
-        eventStatus: 'https://schema.org/EventScheduled',
-        eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-        startDate: '2026-03-01',
-        location: {
-          '@type': 'Place',
-          name: 'Gelateria Amore',
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Långholmsgatan 5',
-            addressLocality: 'Stockholm',
-            addressRegion: 'Stockholm',
-            postalCode: '117 33',
-            addressCountry: 'SE',
-          },
-        },
-        organizer: {
-          '@type': 'Organization',
-          name: 'Gelateria Amore',
-          url: 'https://gamore.se',
-        },
-        offers: {
-          '@type': 'Offer',
-          url: 'https://order.foodtec.se/gamore-catering/bestall-mat',
-          priceCurrency: 'SEK',
-          availability: 'https://schema.org/PreOrder',
-        },
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Startsida',
-            item: 'https://gamore.se',
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Glassprovning',
-            item: 'https://gamore.se/glassprovning',
-          },
-        ],
-      },
-    ]),
+    canonical: 'https://www.gamore.se/glassprovning',
   },
 };
 
 export default function Page() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Event',
+      name: 'Glassprovning Stockholm',
+      description:
+        'Upplev äkta italiensk gelato med en guidad provning på 12 olika smaker. Perfekt för företag, privatfester och glassälskare.',
+      image: 'https://www.gamore.se/gelato-banner.webp',
+      eventStatus: 'https://schema.org/EventScheduled',
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      startDate: '2026-03-01',
+      location: {
+        '@type': 'Place',
+        name: 'Gelateria Amore',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Långholmsgatan 5',
+          addressLocality: 'Stockholm',
+          addressRegion: 'Stockholm',
+          postalCode: '117 33',
+          addressCountry: 'SE',
+        },
+      },
+      organizer: {
+        '@type': 'Organization',
+        name: 'Gelateria Amore',
+        url: 'https://www.gamore.se',
+      },
+      offers: {
+        '@type': 'Offer',
+        url: 'https://order.foodtec.se/gamore-catering/bestall-mat',
+        priceCurrency: 'SEK',
+        availability: 'https://schema.org/PreOrder',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Startsida',
+          item: 'https://www.gamore.se',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Glassprovning',
+          item: 'https://www.gamore.se/glassprovning',
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="bg-[#FAF9F6]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Header Section */}
       <section className="py-12 md:py-20 px-4 text-center">
         <h1 className="text-4xl md:text-6xl font-light text-amber-900 mb-4">

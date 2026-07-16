@@ -20,15 +20,17 @@ const birthstone = Birthstone({
   preload: true,
   weight: '400',
 });
-
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gamore.se'),
+  metadataBase: new URL('https://www.gamore.se'),
   title: {
     default: 'Gelateria Amore - Pizza & Gelato i Stockholm',
     template: '%s | Gelateria Amore',
   },
   description: 'Äkta napolitansk pizza och italiensk gelato på Hornstull',
   icons: 'icon.png',
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({

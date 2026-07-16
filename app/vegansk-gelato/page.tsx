@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import gelatoImg from '@/public/vegan-gelato-display-hero-img.webp';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gamore.se'),
+  metadataBase: new URL('https://www.gamore.se'),
   title: 'Vegansk Gelato Stockholm | Vegansk Glass | Gelateria Amore',
   description:
     'Vegansk gelato i Stockholm gjord på vatten och frukter. Lär dig mer om vår veganska glass utan mjölk. Smakämnena är 100% veganska.',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Vegansk Gelato Stockholm - Äkta vegansk glass',
     description:
       'Vegansk gelato gjord på vatten och frukter. 100% veganska smakämnen utan mjölk eller ägg.',
-    url: 'https://gamore.se/vegansk-gelato',
+    url: 'https://www.gamore.se/vegansk-gelato',
     siteName: 'Gelateria Amore',
     images: [
       {
@@ -37,60 +37,63 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://gamore.se/vegansk-gelato',
-  },
-  other: {
-    'application/ld+json': JSON.stringify([
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: 'Vegansk Gelato Stockholm | Vegansk Glass | Gelateria Amore',
-        description:
-          'Vegansk gelato i Stockholm gjord på vatten och frukter. Lär dig mer om vår veganska glass utan mjölk. Smakämnena är 100% veganska.',
-        image: 'https://gamore.se/gelato.jpg',
-        author: {
-          '@type': 'Organization',
-          name: 'Gelateria Amore',
-          url: 'https://gamore.se',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Gelateria Amore',
-          url: 'https://gamore.se',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://gamore.se/logo.png',
-          },
-        },
-        datePublished: '2024-01-01',
-        dateModified: new Date().toISOString().split('T')[0],
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Startsida',
-            item: 'https://gamore.se',
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Vegansk Gelato',
-            item: 'https://gamore.se/vegansk-gelato',
-          },
-        ],
-      },
-    ]),
+    canonical: 'https://www.gamore.se/vegansk-gelato',
   },
 };
 
 export default function VeganGelatoPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Vegansk Gelato Stockholm | Vegansk Glass | Gelateria Amore',
+      description:
+        'Vegansk gelato i Stockholm gjord på vatten och frukter. Lär dig mer om vår veganska glass utan mjölk. Smakämnena är 100% veganska.',
+      image: 'https://www.gamore.se/gelato.jpg',
+      author: {
+        '@type': 'Organization',
+        name: 'Gelateria Amore',
+        url: 'https://www.gamore.se',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Gelateria Amore',
+        url: 'https://www.gamore.se',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.gamore.se/logo.png',
+        },
+      },
+      datePublished: '2024-01-01',
+      dateModified: new Date().toISOString().split('T')[0],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Startsida',
+          item: 'https://www.gamore.se',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Vegansk Gelato',
+          item: 'https://www.gamore.se/vegansk-gelato',
+        },
+      ],
+    },
+  ];
+
   return (
     <>
-      {/* Hero Section */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div
         className="w-full relative overflow-hidden"
         style={{ minHeight: '550px' }}
@@ -147,7 +150,6 @@ export default function VeganGelatoPage() {
         </svg>
       </div>
 
-      {/* Main Content Section */}
       <section className="py-12 flex flex-col gap-8 bg-cream">
         <h2 className="text-3xl md:text-5xl text-amber-900 font-light md:w-[70%] mx-auto">
           Vegansk Gelato Stockholm
@@ -167,7 +169,6 @@ export default function VeganGelatoPage() {
           Förutom detta är tillverkningssättet detsamma när vi gör vår gelato.
         </p>
 
-        {/* Divider */}
         <div className="w-[90%] md:w-[70%] mx-auto h-px bg-linear-to-r from-transparent via-black/40 to-transparent" />
 
         <article className="md:w-[70%] w-full mx-auto px-4 md:px-0">
@@ -192,7 +193,6 @@ export default function VeganGelatoPage() {
             för att få vägbeskrivning.
           </p>
 
-          {/* Image Gallery */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             <Image
               src="/vegan-gelato-lemon.webp"
@@ -213,7 +213,6 @@ export default function VeganGelatoPage() {
           </div>
         </article>
 
-        {/* Divider */}
         <div className="w-[90%] md:w-[70%] mx-auto h-px bg-linear-to-r from-transparent via-black/40 to-transparent" />
 
         <article className="md:w-[70%] w-full mx-auto px-4 md:px-0">

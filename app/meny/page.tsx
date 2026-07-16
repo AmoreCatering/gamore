@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 import MenuSection from './MenuSection';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gamore.se'),
+  metadataBase: new URL('https://www.gamore.se'),
   title: 'Meny - Napolitansk Pizza, Pasta & Gelato | Gelateria Amore Stockholm',
   description:
-    'Se vår kompletta meny med napolitansk pizza, färsk pasta, italiensk gelato och mer. Stenugnsbakad pizza och handgjord glass på Hornstull i Stockholm.',
+    'Se vår kompletta menu med napolitansk pizza, färsk pasta, italiensk gelato och mer. Stenugnsbakad pizza och handgjord glass på Hornstull i Stockholm.',
   keywords: [
     'pizzameny Stockholm',
     'napolitansk pizza Hornstull',
@@ -18,78 +18,77 @@ export const metadata: Metadata = {
     title: 'Meny - Napolitansk Pizza & Italiensk Mat | Gelateria Amore',
     description:
       'Napolitansk pizza, pasta, gelato och mer. Se hela vår meny med priser.',
-    url: 'https://gamore.se/meny',
+    url: 'https://www.gamore.se/meny',
     siteName: 'Gelateria Amore',
     images: ['/pizza.jpg'],
     locale: 'sv_SE',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://gamore.se/meny',
-  },
-  other: {
-    'application/ld+json': JSON.stringify([
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Restaurant',
-        name: 'Gelateria Amore',
-        url: 'https://gamore.se',
-        image: 'https://gamore.se/pizza.jpg',
-        description: 'Italiensk glasscafé och pizzeria i Stockholm',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Långholmsgatan 5',
-          addressLocality: 'Stockholm',
-          addressRegion: 'Stockholm',
-          postalCode: '117 33',
-          addressCountry: 'SE',
-        },
-        hasMenu: {
-          '@type': 'Menu',
-          name: 'Gelateria Amore Meny',
-          url: 'https://gamore.se/meny',
-          hasMenuSection: [
-            {
-              '@type': 'MenuSection',
-              name: 'Pizza',
-              description: 'Stenugnsbakad napolitansk pizza',
-            },
-            {
-              '@type': 'MenuSection',
-              name: 'Pasta',
-              description: 'Italiensk pasta',
-            },
-            {
-              '@type': 'MenuSection',
-              name: 'Gelato',
-              description: 'Italiensk handgjord glass',
-            },
-          ],
-        },
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Startsida',
-            item: 'https://gamore.se',
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Meny',
-            item: 'https://gamore.se/meny',
-          },
-        ],
-      },
-    ]),
+    canonical: 'https://www.gamore.se/meny',
   },
 };
 
 export default function MenuPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Restaurant',
+      name: 'Gelateria Amore',
+      url: 'https://www.gamore.se',
+      image: 'https://www.gamore.se/pizza.jpg',
+      description: 'Italiensk glasscafé och pizzeria i Stockholm',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Långholmsgatan 5',
+        addressLocality: 'Stockholm',
+        addressRegion: 'Stockholm',
+        postalCode: '117 33',
+        addressCountry: 'SE',
+      },
+      hasMenu: {
+        '@type': 'Menu',
+        name: 'Gelateria Amore Meny',
+        url: 'https://www.gamore.se/meny',
+        hasMenuSection: [
+          {
+            '@type': 'MenuSection',
+            name: 'Pizza',
+            description: 'Stenugnsbakad napolitansk pizza',
+          },
+          {
+            '@type': 'MenuSection',
+            name: 'Pasta',
+            description: 'Italiensk pasta',
+          },
+          {
+            '@type': 'MenuSection',
+            name: 'Gelato',
+            description: 'Italiensk handgjord glass',
+          },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Startsida',
+          item: 'https://www.gamore.se',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Meny',
+          item: 'https://www.gamore.se/meny',
+        },
+      ],
+    },
+  ];
+
   const pizzaData = {
     left: [
       {
@@ -162,7 +161,7 @@ export default function MenuPage() {
       {
         name: 'Estate',
         description:
-          'Tomatsås, Mozzarella, ruccola, prosciutto, parmesan, pesto, balsamico kräm och pinjenötter.',
+          'Tomatsås, Mozzarella, ruccola, prosciutto, parmesan, pesto, balsamico kräm and pinjenötter.',
         price: '160',
       },
       {
@@ -217,7 +216,7 @@ export default function MenuPage() {
       {
         name: 'Grillad Focaccia',
         description:
-          'Grillad Focaccia bröd med prosciutto, mozzarella, pesto, färsk tomat och rucola. ',
+          'Grillad Focaccia bröd med prosciutto, mozzarella, pesto, färsk tomat och rucola.',
         price: '79',
       },
     ],
@@ -380,25 +379,7 @@ export default function MenuPage() {
           'Varje dag har vi olika smaker, kontakta oss gärna för att veta vilken smak det är för dagen.',
         price: 'Från 55',
       },
-      // {
-      //   name: 'Choklad',
-      //   description:
-      //     'Belgisk premium 70 % mörkchoklad kryddat med bourbonvanilj och havssalt.',
-      //   price: '55',
-      // },
     ],
-    // right: [
-    //   {
-    //     name: 'Hasselnötter',
-    //     description: 'No description provided',
-    //     price: '55',
-    //   },
-    //   {
-    //     name: 'Straccietella',
-    //     description: 'Vanilj glass med choklad strössel.',
-    //     price: '55',
-    //   },
-    // ],
   };
 
   const dessertData = {
@@ -433,6 +414,11 @@ export default function MenuPage() {
 
   return (
     <section className="bg-[#FAF9F6] md:py-12 py-4 px-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <h1
         className="text-center text-6xl md:text-8xl font-light mb-4 text-amber-900"
         style={{ fontFamily: 'Birthstone, serif' }}

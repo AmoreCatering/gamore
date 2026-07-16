@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gamore.se'),
+  metadataBase: new URL('https://www.gamore.se'),
   title: 'Integritetspolicy - Gelateria Amore',
   description:
     'Läs Gelateria Amores integritetspolicy. Vi värnar om dina personuppgifter och följer GDPR.',
@@ -9,20 +9,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Integritetspolicy - Gelateria Amore',
     description: 'Information om hur vi hanterar dina personuppgifter.',
-    url: 'https://gamore.se/integritetspolicy',
+    url: 'https://www.gamore.se/integritetspolicy',
     siteName: 'Gelateria Amore',
     locale: 'sv_SE',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://gamore.se/integritetspolicy',
+    canonical: '/integritetspolicy',
   },
 };
 
 function Page() {
   return (
     <section className="py-6 flex flex-col md:[&>section]:w-[70%] [&>section]:w-[90%] [&>section]:flex [&>section]:flex-col [&>section]:gap-6 items-center gap-6 [&_h2]:text-center [&_h1]:text-4xl [&_h1]:font-medium md:[&_h3]:text-2xl [&_h3]:text-xl md:[&_h2]:text-3xl [&_h2]:text-2xl [&_h3]:font-medium [&_h2]:font-medium [&_p]:text-foreground/80 [&_li]:py-2 md:[&_li]:py-0.5">
-      <h1 className="tracking-wid">Integritetspolicy</h1>
+      <h1 className="tracking-wide">Integritetspolicy</h1>
       <section>
         <section>
           <h3>Personuppgifter</h3>
@@ -39,25 +39,29 @@ function Page() {
         <section>
           <h3>Cookies & Samtycke</h3>
           <p>
-            Vid ditt första besök på vår webbplats presenteras du för en cookie-banner
-            där du kan välja mellan &quot;Endast nödvändiga&quot; och &quot;Acceptera allt&quot;.
-            Ditt val sparas i din webbläsare och respekteras vid framtida besök.
+            Vid ditt första besök på vår webbplats presenteras du för en
+            cookie-banner där du kan välja mellan &quot;Endast nödvändiga&quot;
+            och &quot;Acceptera allt&quot;. Ditt val sparas i din webbläsare och
+            respekteras vid framtida besök.
           </p>
           <p className="pt-2">
-            <strong>Endast nödvändiga cookies:</strong> Dessa är tekniska cookies som
-            är helt nödvändiga för att webbplatsen ska fungera, till exempel sessionar
-            och säkerhet. De laddas alltid och kräver inget samtycke.
+            <strong>Endast nödvändiga cookies:</strong> Dessa är tekniska
+            cookies som är helt nödvändiga för att webbplatsen ska fungera, till
+            exempel sessioner och säkerhet. De laddas alltid och kräver inget
+            samtycke.
           </p>
           <p className="pt-2">
-            <strong>Analytics-cookies:</strong> För att förbättra vår webbplats använder vi
-            Vercel Analytics och Speed Insights. Dessa laddas ENDAST om du accepterar
-            alla cookies via banners eller om du har gjort ett tidigare val om att acceptera.
-            Om du väljer &quot;Endast nödvändiga&quot; kommer dessa INTE att laddas.
+            <strong>Analytics-cookies:</strong> För att förbättra vår webbplats
+            använder vi Vercel Analytics och Speed Insights. Dessa laddas ENDAST
+            om du accepterar alla cookies via banners eller om du har gjort ett
+            tidigare val om att acceptera. Om du väljer &quot;Endast
+            nödvändiga&quot; kommer dessa INTE att laddas.
           </p>
           <p className="pt-2">
-            <strong>Ändra ditt val:</strong> Du kan när som helst ändra ditt cookie-val genom
-            att kontakta oss via info@gamore.se. Du kan också aktivera &quot;Do Not Track&quot;
-            i din webbläsares sekretessinställningar, så respekteras ditt val automatiskt.
+            <strong>Ändra ditt val:</strong> Du kan när som helst ändra ditt
+            cookie-val genom att kontakta oss via info@gamore.se. Du kan också
+            aktivera &quot;Do Not Track&quot; i din webbläsares
+            sekretessinställningar, så respekteras ditt val automatiskt.
           </p>
         </section>
 
@@ -93,7 +97,7 @@ function Page() {
         <section>
           <h3>Nyhetsbrev</h3>
           <p>
-            Om du anmäler dig till vårt nyhetsbrev så spara vi dina
+            Om du anmäler dig till vårt nyhetsbrev så sparar vi dina
             personuppgifter för att kunna skicka dig erbjudanden och
             marknadsföring.
           </p>
@@ -104,8 +108,7 @@ function Page() {
           <ul className="list-['-'] *:px-0.5">
             <li>När du genomför ett köp i vår webbshop</li>
             <li>
-              När du kontaktar oss via formulär, telefon, chatt-konversationer,
-              e-post
+              När du kontaktar oss via formulär, telefon, e-post eller chatt
             </li>
             <li>När du besöker vår hemsida och loggar in i vår webbshop</li>
             <li>
@@ -153,7 +156,7 @@ function Page() {
           <p>
             Vi sparar uppgifter så länge som det är nödvändigt för att utföra
             våra åtaganden som leverantör, och så länge det krävs enligt
-            lagstadgade lagringstider.
+            lagstadgade lagringstider (exempelvis bokföringslagen).
           </p>
         </section>
       </section>
@@ -191,12 +194,12 @@ function Page() {
           <ul className="list-['-'] *:px-0.5 pt-1">
             <li>Antal sidvisningar och besök</li>
             <li>Sidladdningstider och webbplatsens prestanda</li>
-            <li>Användarens geografiska region (på landsniväs)</li>
-            <li>Webbläsartyp och enhettyp</li>
-            <li>Referrerande webbplats eller sökmotor</li>
+            <li>Användarens geografiska region (på landsnivå)</li>
+            <li>Webbläsartyp och enhetstyp</li>
+            <li>Refererande webbplats eller sökmotor</li>
           </ul>
           <p className="pt-2">
-            <strong>Hur man opt-ut ur Vercel Analytics:</strong>
+            <strong>Hur du väljer bort Vercel Analytics:</strong>
           </p>
           <ul className="list-['-'] *:px-0.5 pt-1">
             <li>
@@ -204,12 +207,12 @@ function Page() {
               Track&quot; i din webbläsare (finns i sekretessinställningarna)
             </li>
             <li>
-              <strong>Ad-blockers/Privacy Extensions:</strong> Använd extensions
+              <strong>Ad-blockers/Privacy Extensions:</strong> Använd tillägg
               som uBlock Origin, Privacy Badger eller liknande som blockerar
-              spårningsscripten
+              spårningsskripten
             </li>
             <li>
-              <strong>Kontakta oss:</strong> Skicka ett e-post till
+              <strong>Kontakta oss:</strong> Skicka ett e-postmeddelande till
               info@gamore.se om du vill begära att dina data raderas ur systemet
             </li>
           </ul>
@@ -239,7 +242,8 @@ function Page() {
             begränsar behandlingen, för att göra invändningar eller begära
             radering av dina uppgifter. Vid eventuella klagomål på vår
             behandling av personuppgifter har du som individ även rätt att inge
-            klagomål till tillsynsmyndigheten Datainspektionen.
+            klagomål till tillsynsmyndigheten Integritetsskyddsmyndigheten
+            (IMY).
           </p>
           <p className="pt-2">
             Vissa personuppgifter behöver vi för att kunna tillhandahålla våra
@@ -269,7 +273,7 @@ function Page() {
         <address className="text-center not-italic flex flex-col gap-1 *:font-medium">
           <h3>Kontaktuppgifter</h3>
           <a
-            href="https://www.google.com/maps/place/Gelateria+Amore/@59.3177426,18.0279998,16z/data=!3m1!4b1!4m6!3m5!1s0x465f77c51132f8b1:0xb2ff7b2f1441e768!8m2!3d59.31774!4d18.0328707!16s%2Fg%2F11c46cd7z2?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D"
+            href="https://www.google.com/maps/place/Gelateria+Amore/@59.3177426,18.0279998,16z/data=!3m1!4b1!4m6!3m5!1s0x465f77c51132f8b1:0xb2ff7b2f1441e768!8m2!3d59.31774!4d18.0328707!16s%2Fg%2F11c46cd7z2?entry=ttu"
             target="_blank"
             rel="noopener noreferrer"
           >
