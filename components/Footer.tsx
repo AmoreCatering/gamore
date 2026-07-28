@@ -97,19 +97,19 @@ export default function Footer() {
         <dl className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 [&_dt]:font-medium">
           <div className="flex flex-col items-center">
             <dt>Måndag</dt>
-            <dd>Stängt</dd>
+            <dd>13 - 21</dd>
           </div>
           <div className="flex flex-col items-center">
             <dt>Tisdag</dt>
-            <dd>13 - 20</dd>
+            <dd>13 - 21</dd>
           </div>
           <div className="flex flex-col items-center">
             <dt>Onsdag</dt>
-            <dd>13 - 20</dd>
+            <dd>13 - 21</dd>
           </div>
           <div className="flex flex-col items-center">
             <dt>Torsdag</dt>
-            <dd>13 - 20</dd>
+            <dd>13 - 21</dd>
           </div>
           <div className="flex flex-col items-center">
             <dt>Fredag</dt>
