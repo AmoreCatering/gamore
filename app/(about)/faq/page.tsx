@@ -39,13 +39,12 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: 'Vad är era öppettider?',
-    answer:
-      'Vi är öppna tisdag-torsdag 13:00-20:00 och fredag-söndag 13:00-21:00. Måndagar är vi stängda.',
+    answer: 'Vi är öppna alla dagar 13:00-21:00.',
   },
   {
     question: 'Hur beställer jag från er?',
     answer:
-      'Du kan beställa avhämtning genom vår webshop eller beställa med leverans via Wolt. Du är också välkommen att besöka oss direkt på Långholmsgatan 5 under öppettider.',
+      'Du kan beställa avhämtning genom vår webshop eller beställa med leverans via Wolt. Du är också välkommen att besöka oss direkt på Långholmsgatan 5 under våra öppettider.',
   },
   {
     question: 'Finns det vegetariska eller veganska alternativ?',
@@ -101,7 +100,7 @@ export default function FAQ() {
         name: 'Vilka är era öppettider?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Vi är öppna tisdag-torsdag 13:00-20:00 och fredag-söndag 13:00-21:00. Måndagar är vi stängda.',
+          text: 'Vi är öppna alla dagar 13:00-21:00.',
         },
       },
       {
@@ -109,7 +108,7 @@ export default function FAQ() {
         name: 'Hur beställer jag från er?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Du kan beställa avhämtning genom vår webshop eller beställa med leverans via Wolt. Du är också välkommen att besöka oss direkt på Långholmsgatan 5 under öppettider.',
+          text: 'Du kan beställa avhämtning genom vår webshop eller beställa med leverans via Wolt. Du är också välkommen att besöka oss direkt på Långholmsgatan 5 under våra öppettider.',
         },
       },
       {
