@@ -37,17 +37,16 @@ export default function Page() {
   const jsonLd = [
     {
       '@context': 'https://schema.org',
-      '@type': 'Event',
+      '@type': 'Service',
       name: 'Glassprovning Stockholm',
+      serviceType: 'Glassprovning & Gelatoupplevelse',
       description:
         'Upplev äkta italiensk gelato med en guidad provning på 12 olika smaker. Perfekt för företag, privatfester och glassälskare.',
       image: 'https://www.gamore.se/gelato-banner.webp',
-      eventStatus: 'https://schema.org/EventScheduled',
-      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-      startDate: '2026-03-01',
-      location: {
-        '@type': 'Place',
+      provider: {
+        '@type': 'FoodEstablishment',
         name: 'Gelateria Amore',
+        url: 'https://www.gamore.se',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Långholmsgatan 5',
@@ -57,16 +56,15 @@ export default function Page() {
           addressCountry: 'SE',
         },
       },
-      organizer: {
-        '@type': 'Organization',
-        name: 'Gelateria Amore',
-        url: 'https://www.gamore.se',
+      areaServed: {
+        '@type': 'City',
+        name: 'Stockholm',
       },
       offers: {
         '@type': 'Offer',
         url: 'https://order.foodtec.se/gamore-catering/bestall-mat',
         priceCurrency: 'SEK',
-        availability: 'https://schema.org/PreOrder',
+        availability: 'https://schema.org/InStock',
       },
     },
     {
@@ -96,7 +94,6 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Header Section */}
       <section className="py-12 md:py-20 px-4 text-center">
         <h1 className="text-4xl md:text-6xl font-light text-amber-900 mb-4">
           Glassprovning Stockholm
@@ -114,7 +111,6 @@ export default function Page() {
         </Link>
       </section>
 
-      {/* Feature Cards Section */}
       <section className="max-w-6xl mx-auto px-4 py-12 md:py-16">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white rounded-lg shadow-lg p-8 text-center">
@@ -151,7 +147,6 @@ export default function Page() {
         />
       </div>
 
-      {/* Main Content Section */}
       <section className="max-w-4xl mx-auto px-4 py-12 md:py-16">
         <h2
           className="text-5xl md:text-5xl font-light text-amber-900 mb-8 text-center"
@@ -184,7 +179,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Booking Info Section */}
       <section id="bokning" className="max-w-4xl mx-auto px-4 py-12 md:py-16">
         <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
           <h2
@@ -226,7 +220,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
       <section className="bg-white py-12 md:py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-light text-amber-900 mb-12 text-center">
@@ -234,7 +227,6 @@ export default function Page() {
           </h2>
 
           <div className="space-y-8">
-            {/* Testimonial 1 */}
             <div className="border-l-4 border-amber-600 pl-6 py-4">
               <p className="text-gray-700 mb-4 italic">
                 "Mycket lyckad glassprovning. Många spännande smakprover (15+)
@@ -244,7 +236,6 @@ export default function Page() {
               <p className="font-semibold text-gray-800">- Sten</p>
             </div>
 
-            {/* Testimonial 2 */}
             <div className="border-l-4 border-amber-600 pl-6 py-4">
               <p className="text-gray-700 mb-4 italic">
                 "Det finns glass ställen och så finns det Gelateria Amore! Här
@@ -257,7 +248,6 @@ export default function Page() {
               <p className="font-semibold text-gray-800">- Per M</p>
             </div>
 
-            {/* Testimonial 3 */}
             <div className="border-l-4 border-amber-600 pl-6 py-4">
               <p className="text-gray-700 mb-4 italic">
                 "Lugnt o trevligt, fick veta massor av intressanta saker o äta
@@ -308,7 +298,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Booking CTA Section */}
       <section className="bg-amber-50 py-12 md:py-16 px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-light text-amber-900 mb-4">
           Intresserad av glassprovning?
@@ -323,7 +312,6 @@ export default function Page() {
         </Link>
       </section>
 
-      {/* Details Section */}
       <section className="bg-white py-12 md:py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-light text-amber-900 mb-8 text-center">
