@@ -3,7 +3,10 @@ import { FaInstagram, FaYelp, FaTripadvisor } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col gap-8 pt-8 items-center bg-foreground/90 *:text-background [&_h2]:font-light [&_h2]:text-xl [&_h2]:uppercase [&_h2]:text-background/80 relative">
+    <footer
+      data-nosnippet
+      className="flex flex-col gap-8 pt-8 items-center bg-foreground/90 *:text-background [&_h2]:font-light [&_h2]:text-xl [&_h2]:uppercase [&_h2]:text-background/80 relative"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="absolute top-0 left-0 right-0 w-full"
@@ -82,11 +85,10 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             Långholmsgatan 5, 117 33 Stockholm
-          </a>
-
+          </a>{' '}
           <a className="email" href="mailto:info@gamore.se">
             info@gamore.se
-          </a>
+          </a>{' '}
           <a className="phone" href="tel:+46707961666">
             070 796 16 66
           </a>
